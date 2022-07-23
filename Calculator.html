@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+  <title>Calculator</title>
+  <link rel="stylesheet" href="Calculator.css">
+  <script src="Calculator.js"></script>
+</head>
+
+<body>
+  <h1>World's Lamest Calculator Page</h1>
+  <div class="form">
+    <div class="form-row">    
+      <label>You put a number here:</label>
+      <input type="text" id="numA" value="10">
+    </div>
+  
+    <div class="form-row">      
+      <label>You put another number here:</label>      
+      <input type="text" id="numB" value="5">      
+    </div>
+    <div class="form-row">      
+      <label>Now click this button:</label>
+      <button onclick="doButtonClick()">Add Numbers</button>
+    </div>
+    <div class="form-row form-row-last">      
+      <label>And we do the adding:</label>
+      <output id="result"></output>
+    </div>
+  </div>
+
+</body></html>
