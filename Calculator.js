@@ -8,9 +8,14 @@ Inspired by this article on debugging - check it out for useful tips and hints
 */
 
 let andThisIsAGlobalVariable = 'howdy all';
+if (getCookie('trackingCode') != 'XYZ' && isNaN(getCookie('trackingCode'))){
+  alert('reinitialzing cookie');
+  setCookie('trackingCode', 'XYZ', 30);
+} else {
+  alert('cookie is fine:' + getCookie('trackingCode'));
+}
 
-setCookie('trackingCode', 'XYZ', 30);
-setCookie('username', 'XYZ', -1);
+//setCookie('username', 'XYZ', -1);
 let cookieName = 'trackingCode';
 let hat = getCookie(cookieName);
 let a = 1;
@@ -56,11 +61,11 @@ function doButtonClick() {
   // HW: if phone is a number then set numberA = to the value of phone 
   // This should result in the numberA being larger each time you load the page,
   // because it'll take whatever it was last time (from setting a cookie below)
-if (isNaN(cookieName)) {
-  console.log (`Phone:${numberA} is not a number`)
+if (isNaN(phone)) {
+  console.log (`Phone:${phone} is not a number`)
 }
 else{
-  console.log(`numberA:${numberA} IS a number`)
+  console.log(`numberA:${phone} IS a number`)
   numberA = phone
 }
 
@@ -76,7 +81,7 @@ else{
   let additionResult = addNumbers(numberA, numberB);
 
   // HW: Write the result of additionResult out as the trackingCode cookie.
-
+  setCookie('trackingCode', additionResult, 30);
 
 
   let multiplicationResult = multiplyNumbers(numberA, numberB);
